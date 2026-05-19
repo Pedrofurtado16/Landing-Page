@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo box-sizing</title>
+
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f2f2f2;
+    }
+
+    h2{
+      margin-top: 40px;
+    }
+
+    .container{
+      width: 500px;
+      background: #ddd;
+      margin-bottom: 30px;
+      border: 3px solid #333;
+    }
+
+    /* SEM border-box */
+    .sem-border-box{
+      width: 360px;
+      padding: 60px;
+      border: 10px solid red;
+      background: aqua;
+
+      /*
+        Largura final:
+        500px
+        + 40px esquerda
+        + 40px direita
+        + 10px esquerda
+        + 10px direita
+
+        TOTAL = 600px
+      */
+    }
+
+    /* COM border-box */
+    .com-border-box{
+      width: 500px;
+      padding: 60px;
+      border: 10px solid green;
+      background: lightgreen;
+
+      box-sizing: border-box;
+
+      /*
+        A largura TOTAL continua 500px,
+        porque o padding e a border
+        ficam "dentro" da largura.
+      */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Diferença entre box-sizing normal e border-box</h1>
+
+  <h2>1. Sem border-box</h2>
+
+  <div class="container">
+    <div class="sem-border-box">
+      Sem border-box
+    </div>
+  </div>
+
+
+
+  <div class="container">
+    <div class="com-border-box">
+      Com border-box
+    </div>
+  </div>
+
+
+
+</body>
+</html>
